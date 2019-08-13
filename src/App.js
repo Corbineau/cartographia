@@ -1,15 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Viewer from "cesium/Source/Widgets/Viewer/Viewer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    componentDidMount() {
+        this.viewer = new Viewer(this.cesiumContainer);
+    }
+
+    render() {
+        return (
+            <div>
+                <div id="cesiumContainer" ref={ element => this.cesiumContainer = element }/>
+            </div>
+        );
+    }
 }
 
 export default App;
