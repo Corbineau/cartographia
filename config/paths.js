@@ -87,7 +87,6 @@ module.exports = {
   cesiumDebugBuild : resolveApp('node_modules/cesium/Build/CesiumUnminified/'),
   cesiumProdBuild : resolveApp('node_modules/cesium/Build/Cesium/'),
   cesiumSourceFolder : resolveApp('node_modules/cesium/Source/'),
-  nodePaths: nodePaths,
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
 };
