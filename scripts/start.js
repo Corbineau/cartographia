@@ -28,6 +28,7 @@ const {
   prepareUrls,
 } = require('react-dev-utils/WebpackDevServerUtils');
 const openBrowser = require('react-dev-utils/openBrowser');
+const express = require("express");
 const paths = require('../config/paths');
 const configFactory = require('../config/webpack.config');
 const createDevServerConfig = require('../config/webpackDevServer.config');
@@ -106,6 +107,7 @@ checkBrowsers(paths.appPath, isInteractive)
     );
     const devServer = new WebpackDevServer(compiler, serverConfig);
     // Launch WebpackDevServer.
+    devServer.use("/cesium", express.static(paths.cesiumDebugBuild));
     devServer.listen(port, HOST, err => {
       if (err) {
         return console.log(err);
@@ -113,6 +115,7 @@ checkBrowsers(paths.appPath, isInteractive)
       if (isInteractive) {
         clearConsole();
       }
+
 
       // We used to support resolving modules according to `NODE_PATH`.
       // This now has been deprecated in favor of jsconfig/tsconfig.json
