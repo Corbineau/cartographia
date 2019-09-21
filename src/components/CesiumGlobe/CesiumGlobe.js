@@ -5,7 +5,7 @@ import BingMapsImageryProvider from "cesium/Source/Scene/BingMapsImageryProvider
 import CesiumTerrainProvider from "cesium/Source/Core/CesiumTerrainProvider";
 
 const BING_MAPS_URL = "//dev.virtualearth.net";
-const BING_MAPS_KEY = "ABCDEFGH12345678";
+const BING_MAPS_KEY = "ABCDEFGH12345678"; //put this in a .env?
 const STK_TERRAIN_URL = "//assets.agi.com/stk-terrain/world";
 
 export default class CesiumGlobe extends Component {
